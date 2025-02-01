@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ExpenseForm } from "./ExpenseForm";
 
 export const AddExpenseButton = () => {
   return (

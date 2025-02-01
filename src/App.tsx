@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/themes/ThemeProvider";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { useAuth } from "@/contexts/AuthContext";
 import Index from "./pages/Index";
@@ -13,28 +13,28 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
-  const { user, isLoading } = useAuth();
+// const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+//   const { user, isLoading } = useAuth();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+//   if (isLoading) {
+//     return null;
+//   }
 
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+//   if (!user) {
+//     return <Navigate to="/login" />;
+//   }
 
-  return <>{children}</>;
-};
+//   return <>{children}</>;
+// };
 
 const AppRoutes = () => (
   <Routes>
     <Route
       path="/"
       element={
-        <ProtectedRoute>
+       // <ProtectedRoute>
           <Index />
-        </ProtectedRoute>
+       // </ProtectedRoute>
       }
     />
     <Route path="/login" element={<Login />} />

@@ -1,5 +1,5 @@
 import { RegisterForm } from "@/components/auth/RegisterForm";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "@/components/themes/ThemeToggle";
 import { useAuth } from "@/contexts/AuthContext";
 import { Navigate } from "react-router-dom";
 
