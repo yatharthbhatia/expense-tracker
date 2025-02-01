@@ -44,7 +44,7 @@ export const RecentExpenses = ({ expenses }: RecentExpensesProps) => {
     </Card>
   ); */}
 
-    <Card className="glass-card col-span-4 space-y-4  shadow-sm">
+    <Card className="glass-card col-span-3 space-y-4  shadow-sm">
     {/* <div className="col-span-3 space-y-4"> */}
       <div className="rounded-lg text-card-foreground">
         <div className="flex flex-col space-y-1.5 p-6">
@@ -62,7 +62,8 @@ export const RecentExpenses = ({ expenses }: RecentExpensesProps) => {
                 <TableHead>Date</TableHead>
                 <TableHead>Description</TableHead>
                 <TableHead>Category</TableHead>
-                <TableHead className="text-right">Amount</TableHead>
+                {/* <TableHead className="text-right">Amount</TableHead> */}
+                <TableHead>Amount</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -71,8 +72,9 @@ export const RecentExpenses = ({ expenses }: RecentExpensesProps) => {
                   <TableCell>{formatDate(expense.date)}</TableCell>
                   <TableCell>{expense.description}</TableCell>
                   <TableCell>{expense.category}</TableCell>
-                  <TableCell className="text-right">
-                    ${expense.amount.toFixed(2)}
+                  {/* <TableCell className="text-right"> */}
+                  <TableCell>
+                    ₹{expense.amount.toFixed(2)}
                   </TableCell>
                 </TableRow>
               ))}
